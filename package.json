@@ -2,6 +2,7 @@
   "name": "lastcloudapp",
   "version": "0.0.0",
   "dependencies": {
+    "bower": "^1.3.12",
     "express": "^4.12.2",
     "gzippo": "^0.2.0",
     "morgan": "^1.5.2"
@@ -41,6 +42,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "postinstall":"bower cache clean && bower install"
   }
 }

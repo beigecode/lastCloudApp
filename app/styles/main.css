@@ -5,8 +5,110 @@
   padding: 0.2em 0;
 }
 
+.fix-width {
+  width: 20em !important;
+}
+
+.tp-7 {
+  padding-top: 7px;
+}
+
+.avatar {
+  width:100px;
+  height: 100px;
+}
+
+.fab {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: #fff;
+  overflow: hidden;
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.white {
+  color: #fff
+}
+
+.btn-custom {
+  padding:0 30px;
+  background-color: #E96B15;
+  float: left;
+  font-size: x-small;
+  border: 1px solid #FFF;
+  border-radius: 1px;
+}
+
+.btn-lil {
+  height: 14px;
+  font-size: x-small;
+  line-height: 1px;
+}
+
+.btn-panel {
+  position: relative;
+  bottom: 100px;
+  left: 100px;
+}
+
+.btn-custom:hover{
+  background-color: #C05003;
+}
+
+.playing, .sc-orange, .fab {
+  background-color: #FF6C00;
+}
+
+.play-btn, .stop-btn {
+  float:right;
+  margin: 20px;
+  z-index: 1;
+}
+
+.navbar {
+ box-shadow: 0 6px 12px #E96B15, 0 10px 40px #E96B15;
+ background-color:#E96B15;
+}
+
+.trackname {
+  font-size:20px;
+  text-shadow:0px 0px 10px #000;
+  color:#fff;
+  font-family:Ubuntu, Geneva, sans-serif;
+}
+
+.tracklist {
+  margin-top: 200px;
+}
+
+.entry {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.scloudRow {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
+  opacity: 0.9;
+}
+
+.entry:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  transition-delay: 0s;
+}
+
 body {
   padding: 0;
+  background: url('/images/sky.jpg') no-repeat;
+  font-family: "Ubuntu", sans-serif;
+  overflow-x: hidden; 
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -34,7 +136,6 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {

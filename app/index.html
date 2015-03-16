@@ -1,93 +1,121 @@
 <!doctype html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="lastCloudAppApp">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/logo.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="gg-app" ng-controller="PlayerController">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+      <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+      <nav class="navbar navbar-fixed-top tp-7">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+        <div class="row">
 
-            <a class="navbar-brand" href="#/">lastCloudApp</a>
-          </div>
+          <form class="form-inline">
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <div class="col-md-2">
+              
+            </div>
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <input class="fix-width form-control" ng-model="username" placeholder="Enter the SounCloud username">
+                <button class="btn sc-orange" ng-click="search(username)">
+                  <i class="glyphicon glyphicon-search white"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <input ng-model="q" id="search" class="fix-width form-control" placeholder="Filter text">
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <input class="fix-width form-control" ng-model="lfmUsername" placeholder="Enter the Lastfm username">
+                <button class="btn sc-orange" ng-click="searchLfm(lfmUsername)">
+                  <i class="glyphicon glyphicon-search white"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </nav>
+
+      <div class="row">
+        <div class="col-xs-6 tracklist">
+          <ul>
+            <li dir-paginate="track in user.tracks | filter:q | itemsPerPage: 8" current-page="currentPage" class="entry scloudRow">
+              <span scloud-link play='play(track)' ng-model="track"></span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-6 tracklist">
+          <ul>
+            <li dir-paginate="trak in lfmUser.traks | filter:q | itemsPerPage: 8" current-page="currentPage" class="entry scloudRow"  >
+              <span lfm-list ng-model="trak"></span>
+              <div class="btn-panel" btn-stack></div>
+            </li>
+          </ul>
+        </div>
+      </div>  
+
+      <div class="footer navbar-fixed-bottom">
+        <div class="text-center">
+          <dir-pagination-controls boundary-links="true" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
         </div>
       </div>
-    </div>
 
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+         (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+         r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
-    </script>
+     </script>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
-</body>
-</html>
+     <!-- build:js(.) scripts/vendor.js -->
+     <!-- bower:js -->
+     <script src="bower_components/jquery/dist/jquery.js"></script>
+     <script src="bower_components/angular/angular.js"></script>
+     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+     <script src="bower_components/angular-animate/angular-animate.js"></script>
+     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+     <script src="bower_components/angular-resource/angular-resource.js"></script>
+     <script src="bower_components/angular-route/angular-route.js"></script>
+     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+     <script src="bower_components/angular-touch/angular-touch.js"></script>
+     <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+     <script src="bower_components/sdk/index.js"></script>
+     <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+     <!-- endbower -->
+     <!-- endbuild -->
+
+     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+     <script src="scripts/app.js"></script>
+     <script src="scripts/soundcloud/scloudService.js"></script>
+     <script src="scripts/lastfm/lfmService.js"></script>
+     <!-- endbuild -->
+   </body>
+   </html>
