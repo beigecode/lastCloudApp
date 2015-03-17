@@ -1,0 +1,29 @@
+
+
+.animation-target:hover {
+  animation: animation 1100ms linear infinite both;
+}
+
+/* Generated with Bounce.js. Edit at http://goo.gl/xllvRO */
+
+@keyframes animation { 
+  0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  8.99% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  9.09% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  14.82% { transform: matrix3d(1.038, 0, 0, 0, 0, 1.038, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  20.47% { transform: matrix3d(1.062, 0, 0, 0, 0, 1.062, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  26.2% { transform: matrix3d(1.077, 0, 0, 0, 0, 1.077, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  31.84% { transform: matrix3d(1.086, 0, 0, 0, 0, 1.086, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  43.22% { transform: matrix3d(1.095, 0, 0, 0, 0, 1.095, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  54.59% { transform: matrix3d(1.098, 0, 0, 0, 0, 1.098, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  77.34% { transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+}
+
+.logo-left {
+  float: left;
+  height: 50px;
+  padding: 0px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}

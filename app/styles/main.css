@@ -18,6 +18,22 @@
   height: 100px;
 }
 
+.bio-p {
+  margin-bottom: 0;
+  text-align:left;
+  font: normal 15px/150% Droid Sans, Helvetica, sans-serif;
+}
+
+.bio-img {
+  position: relative;
+  top: 6px;
+  display: block;
+  float: left;
+  margin: 0 6px 12px 0;
+  height: 11.25em;
+  width: 12.25em;
+}
+
 .fab {
   position: relative;
   display: inline-block;
@@ -35,13 +51,53 @@
   color: #fff
 }
 
+.tag-container {
+  line-height: 12px;
+  margin-top: 2px;
+}
+
+.tag-itself:hover, .tag-itself:visited {
+  color:#fff;
+  text-decoration: none;
+}
+
+.tag-itself {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  padding: 0 7px;
+  background: #337ab7;
+  border: 1px solid #337ab7;
+  border-left-width: 0;
+  color: #fff;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 20px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 3px;
+  user-select: none;
+}
+
+
+
 .btn-custom {
   padding:0 30px;
   background-color: #E96B15;
   float: left;
-  font-size: x-small;
-  border: 1px solid #FFF;
   border-radius: 1px;
+  font: small-caps bold 13px/150% Ubuntu, Helvetica, sans-serif;
+  line-height: 1px;
+  height: 11px;
+  color:#fff;
+  padding-bottom: 3px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+
+.btn-custom:hover{
+  color:#fff;
+  background-color: #C05003
 }
 
 .btn-lil {
@@ -54,10 +110,6 @@
   position: relative;
   bottom: 100px;
   left: 100px;
-}
-
-.btn-custom:hover{
-  background-color: #C05003;
 }
 
 .playing, .sc-orange, .fab {
