@@ -18,6 +18,9 @@ SC.initialize({
 
 var app = angular
 .module('gg-app', ['angularModalService','ngSanitize','angularUtils.directives.dirPagination'])
+.config(function(paginationTemplateProvider) {
+    paginationTemplateProvider.setPath('views/dirPagination.tpl.html');
+})
 .controller('PlayerController', ['$scope','$http','scloudService','lfmService','ModalService', function($scope, $http, scloudService, lfmService, ModalService) {
 
   $scope.playing = false;
