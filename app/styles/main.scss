@@ -1,23 +1,30 @@
+@import 'colors';
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0; }
+  padding: 0.2em 0;
+}
 
 .fix-width {
-  width: 20em !important; }
+  width: 20em !important;
+}
 
 .tp-7 {
-  padding-top: 7px; }
+  padding-top: 7px;
+}
 
 .avatar {
-  width: 100px;
-  height: 100px; }
+  width:100px;
+  height: 100px;
+}
 
 .bio-p {
   margin-bottom: 0;
-  text-align: left;
-  font: normal 15px/150% Droid Sans, Helvetica, sans-serif; }
+  text-align:left;
+  font: normal 15px/150% Droid Sans, Helvetica, sans-serif;
+}
 
 .bio-img {
   position: relative;
@@ -26,7 +33,8 @@
   float: left;
   margin: 0 6px 12px 0;
   height: 11.25em;
-  width: 12.25em; }
+  width: 12.25em;
+}
 
 .fab {
   position: relative;
@@ -38,177 +46,197 @@
   overflow: hidden;
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: 0.2s;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
 
 .white {
-  color: #fff; }
+  color: #fff
+}
 
 .tag-container {
   line-height: 12px;
-  margin-top: 2px; }
+  margin-top: 2px;
+}
 
 .tag-itself {
   position: relative;
   display: inline-block;
   height: 20px;
   padding: 0 7px;
-  background: #337ab7;
-  border: 1px solid #337ab7;
+  background: $sky-blue;
+  border: 1px solid $sky-blue;
   border-left-width: 0;
   color: #fff;
   font-weight: 100;
   font-size: 14px;
   line-height: 20px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
   white-space: nowrap;
   cursor: pointer;
   border-radius: 3px;
-  user-select: none; }
-  .tag-itself:hover, .tag-itself :visited {
-    color: #fff;
-    text-decoration: none; }
+  user-select: none;
+  &:hover, :visited{  color:#fff; text-decoration: none};
+}
 
-.btn-thin, .btn-cloudorange, .btn-skyblue {
-  padding: 0 30px;
+.btn-thin {
+  padding:0 30px;
   float: left;
   border-radius: 1px;
   font: small-caps bold 13px/150% Ubuntu, Helvetica, sans-serif;
   line-height: 1px;
   height: 11px;
-  color: #fff;
+  color:#fff;
   padding-bottom: 3px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+
 
 .btn-cloudorange {
-  background-color: #FF6C00; }
-  .btn-cloudorange:hover {
-    color: #fff;
-    background-color: #cc5600; }
+  @extend .btn-thin;
+  background-color: $soundcloud-bright;
+    &:hover { color:#fff; background-color: darken($soundcloud-bright, 10%); }
+}
 
 .btn-skyblue {
-  background-color: #337ab7; }
-  .btn-skyblue:hover {
-    color: #fff;
-    background-color: #285f8f; }
+  @extend .btn-thin;
+  background-color: $sky-blue;
+    &:hover { color:#fff; background-color: darken($sky-blue, 10%); }
+}
 
 .btn-lil {
   height: 14px;
   font-size: x-small;
-  line-height: 1px; }
+  line-height: 1px;
+}
 
 .btn-panel {
   position: relative;
   bottom: 100px;
-  left: 100px; }
+  left: 100px;
+}
 
 .playing, .sc-orange, .fab {
-  background-color: #FF6C00; }
+  background-color: $soundcloud-bright
+}
 
 .play-btn, .stop-btn {
-  float: right;
+  float:right;
   margin: 20px;
-  z-index: 1; }
+  z-index: 1;
+}
 
 .navbar {
-  box-shadow: 0 6px 12px #E96B15, 0 10px 40px #FF6C00;
-  background-color: #E96B15; }
+ box-shadow: 0 6px 12px $soundcloud-dark, 0 10px 40px $soundcloud-bright;
+ background-color:$soundcloud-dark;
+}
 
 .trackname {
-  font-size: 20px;
-  text-shadow: 0px 0px 10px #000;
-  color: #fff;
-  font-family: Ubuntu, Geneva, sans-serif; }
+  font-size:20px;
+  text-shadow:0px 0px 10px #000;
+  color:#fff;
+  font-family:Ubuntu, Geneva, sans-serif;
+}
 
 .tracklist {
-  margin-top: 200px; }
+  margin-top: 200px;
+}
 
 .entry {
   border: 1px solid rgba(0, 0, 0, 0.1);
   list-style: none;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+}
 
 .scloudRow {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
-  opacity: 0.9; }
+  opacity: 0.9;
+}
 
 .entry:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-  transition-delay: 0s; }
+  transition-delay: 0s;
+}
 
 body {
   padding: 0;
-  background: url("/images/sky.jpg") no-repeat;
+  background: url('/images/sky.jpg') no-repeat;
   background-position: center center;
-  background-attachment: fixed;
-  /*Background image is fixed in the viewport so that it doesn't move when  the content's height is greater than the image's height */
-  background-size: cover;
-  /* This is what makes the background image rescale based on the container's size */
+  background-attachment: fixed;  /*Background image is fixed in the viewport so that it doesn't move when  the content's height is greater than the image's height */
+  background-size: cover;  /* This is what makes the background image rescale based on the container's size */
   font-family: "Ubuntu", sans-serif;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+}
 
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px; }
-
+  margin-bottom: 10px;
+}
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
-  padding-bottom: 19px; }
+  padding-bottom: 19px;
+}
 
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777; }
+  color: #777;
+}
 
 .container-narrow > hr {
-  margin: 30px 0; }
+  margin: 30px 0;
+}
 
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5; }
-
+  border-bottom: 1px solid #e5e5e5;
+}
 .jumbotron .btn {
   font-size: 21px;
-  padding: 14px 24px; }
+  padding: 14px 24px;
+}
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0; }
-
+  margin: 40px 0;
+}
 .marketing p + h4 {
-  margin-top: 28px; }
+  margin-top: 28px;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px; }
+    max-width: 730px;
+  }
 
   /* Remove the padding we set earlier */
   .header,
   .marketing,
   .footer {
     padding-left: 0;
-    padding-right: 0; }
-
+    padding-right: 0;
+  }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px; }
-
+    margin-bottom: 30px;
+  }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
-    border-bottom: 0; } }
-
-/*# sourceMappingURL=main.css.map */
+    border-bottom: 0;
+  }
+}
