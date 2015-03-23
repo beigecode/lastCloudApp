@@ -69,7 +69,22 @@ var app = angular
 
   $scope.showBio = function(trak) {
     ModalService.showModal({
-      templateUrl: 'views/modalContent.html',
+      templateUrl: 'views/bio.html',
+      controller: "PlayerController"
+    }).then(function(modal) {
+      lfmService.getArtistInfo(trak.artist.name)
+      .success(function(data) {;
+        modal.scope.artist = data;
+        console.log("Modal content:", data)
+        modal.element.modal();
+
+      })
+    });
+  };
+
+    $scope.showSimilar = function(trak) {
+    ModalService.showModal({
+      templateUrl: 'views/similarArtists.html',
       controller: "PlayerController"
     }).then(function(modal) {
       lfmService.getArtistInfo(trak.artist.name)

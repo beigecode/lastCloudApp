@@ -1,3 +1,30 @@
+.artist-similar-img {
+  position: relative;
+  width: 100%;
+  /* for IE 6 */
+  height: 200px !important; }
+
+.header-artist {
+  position: absolute;
+  bottom: 14px;
+  width: 100%; }
+  .header-artist > span {
+    color: white;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    letter-spacing: -1px;
+    background: black;
+    /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px; }
+
+.wide-modal {
+  width: 50%; }
+
+.modal-header {
+  text-align: center;
+  font-weight: 100;
+  font-family: Interstate, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Garuda, Verdana, Tahoma, sans-serif; }
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
