@@ -2,8 +2,8 @@
 'use strict';
 
 //soundCloud defaults
-var scClientID = 'client_id=b01d73c6e71275a21a725997d6bd281c', 
-scUserID = '19729363', 
+var scClientID = 'client_id=b01d73c6e71275a21a725997d6bd281c',
+scUserID = '19729363',
 scApiUrl = 'https://api.soundcloud.com',
 resolvedUrl,
 // lastfm defaults
@@ -37,17 +37,17 @@ var app = angular
   $scope.search = function(username) {
 
     scloudService.getUserByUsername(username)
-    .success(function(data, status) { 
+    .success(function(data, status) {
       $scope.user = data;
       resolvedUrl = $scope.user.uri;
     })
-    .then(function(data) { 
+    .then(function(data) {
       scloudService.getUserTracks(username)
-      .success(function(data) { 
-        $scope.user.tracks = data; 
+      .success(function(data) {
+        $scope.user.tracks = data;
         $('.gg-container').css('background-image', 'url(' + $scope.user.avatar_url + ')');
-        console.log($scope.user) 
-      }) 
+        console.log($scope.user)
+      })
     })
 
   }
@@ -99,8 +99,8 @@ var app = angular
 
   $scope.play = function (track) {
 
-    if ($scope.playing) { 
-      $scope.audio.pause(); 
+    if ($scope.playing) {
+      $scope.audio.pause();
       $scope.playing = false;
     } else {
       var url = track.stream_url + '?' + scClientID;
@@ -143,8 +143,8 @@ var app = angular
  link: function(scope, el, attr) {
    scope.duration = scope.ngModel.duration;
 
-   $(el).click(function() { 
-    scope.$parent.$parent.playing ? 
+   $(el).click(function() {
+    scope.$parent.$parent.playing ?
     el.addClass('playing') : el.removeClass('playing');
   })
  }

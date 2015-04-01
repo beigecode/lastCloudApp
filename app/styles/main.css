@@ -25,6 +25,9 @@
   font-weight: 100;
   font-family: Interstate, 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Garuda, Verdana, Tahoma, sans-serif; }
 
+.icon-bar {
+  background-color: #ffffff; }
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
