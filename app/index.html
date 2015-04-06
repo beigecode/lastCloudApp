@@ -40,30 +40,35 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
            <form class="navbar-form navbar-left">
+
               <div class="form-group input-group form-control-inline">
                 <input class="fix-width form-control" ng-model="username" placeholder="Enter the SounCloud username">
                 <button class="btn sc-orange" ng-click="search(username)">
                   <i class="glyphicon glyphicon-search white"></i>
                 </button>
               </div>
+
             </form>
 
             <form class="navbar-form navbar-left">
-              <div class="form-group form-control-inline">
-                <input ng-model="q" id="search" class="fix-width form-control" placeholder="Filter text">
-              </div>
+
+                <div class="form-group form-control-inline">
+                  <input ng-model="q" id="search" class="fix-width form-control" placeholder="Filter text">
+                </div>
+
             </form>
 
 
             <form class="navbar-form navbar-right">
-              <div class="form-group input-group form-control-inline">
-                  <input class="fix-width form-control" ng-model="lfmUsername" placeholder="Enter the Lastfm username">
-                <button class="btn sc-orange" ng-click="searchLfm(lfmUsername)">
-                  <i class="glyphicon glyphicon-search white"></i>
-                </button>
-              </div>
-            </form>
 
+                <div class="form-group input-group form-control-inline">
+                  <input class="fix-width form-control" ng-model="lfmUsername" placeholder="Enter the Lastfm username">
+                  <button class="btn sc-orange" ng-click="searchLfm(lfmUsername)">
+                    <i class="glyphicon glyphicon-search white"></i>
+                  </button>
+                </div>
+
+            </form>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
 
@@ -71,18 +76,18 @@
 
 
       <div class="row">
-        <div class="col-xs-6 tracklist">
+        <div class="col-md-6 tracklist">
           <ul>
             <li dir-paginate="track in user.tracks | filter:q | itemsPerPage: 8" current-page="currentPage" class="entry scloudRow">
               <span scloud-link play='play(track)' ng-model="track"></span>
             </li>
           </ul>
         </div>
-        <div class="col-xs-6 tracklist">
+        <div class="col-md-6 tracklist">
           <ul>
-            <li dir-paginate="trak in lfmUser.traks | filter:q | itemsPerPage: 8" current-page="currentPage" class="entry scloudRow"  >
-              <span lfm-list ng-model="trak"></span>
+            <li dir-paginate="trak in lfmUser.traks | filter:q | itemsPerPage: 8" current-page="currentPage" class="entry scloudRow">
               <div class="btn-panel" btn-stack></div>
+              <span lfm-list ng-model="trak"></span>
             </li>
           </ul>
         </div>

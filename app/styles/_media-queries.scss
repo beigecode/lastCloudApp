@@ -4,44 +4,25 @@
      font-size: 1em;
    }
 
-    img.avatar {
-      width:80px;
-      height:80px;
-    }
-
-    div.btn-panel {
-      bottom: 80px;
-      left:80px;
-    }
 }
 
-@media (max-width: 360px) {
-  img.avatar {
-    width:20px;
-    height:20px;
-  }
+@media (max-width: 540px) {
 
-  span.trackname {
-    font-size: 0.5em;
-  }
+  .scloudRow {
 
-  div.btn-panel {
-    position:static;
-  }
+      .btn-panel {
+        position: static;
+        float: right;
 
-  div.btn-panel > button.btn-thin {
+        .btn-thin {
+          padding: 0 7px;
+        }
+      }
 
-    padding: 0 30px;
-    float: left;
-    border-radius: 1px;
-    font: small-caps bold 9px Ubuntu, Helvetica, sans-serif;
-    line-height: 1px;
-    height: 4px;
-    width: 10px;
-    color: #fff;
-    padding-bottom: 3px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 
+      span p {
+       width: 60%;
+      }
   }
 
 }

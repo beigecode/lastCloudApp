@@ -35,37 +35,15 @@
 
 @media (max-width: 1350px) {
   span.trackname {
-    font-size: 1em; }
-
-  img.avatar {
-    width: 80px;
-    height: 80px; }
-
-  div.btn-panel {
-    bottom: 80px;
-    left: 80px; } }
-@media (max-width: 360px) {
-  img.avatar {
-    width: 20px;
-    height: 20px; }
-
-  span.trackname {
-    font-size: 0.5em; }
-
-  div.btn-panel {
-    position: static; }
-
-  div.btn-panel > button.btn-thin, div.btn-panel > button.btn-cloudorange, div.btn-panel > button.btn-skyblue {
-    padding: 0 30px;
-    float: left;
-    border-radius: 1px;
-    font: small-caps bold 9px Ubuntu, Helvetica, sans-serif;
-    line-height: 1px;
-    height: 4px;
-    width: 10px;
-    color: #fff;
-    padding-bottom: 3px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); } }
+    font-size: 1em; } }
+@media (max-width: 540px) {
+  .scloudRow .btn-panel {
+    position: static;
+    float: right; }
+    .scloudRow .btn-panel .btn-thin, .scloudRow .btn-panel .btn-cloudorange, .scloudRow .btn-panel .btn-skyblue {
+      padding: 0 7px; }
+  .scloudRow span p {
+    width: 60%; } }
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -79,8 +57,9 @@
   padding-top: 7px; }
 
 .avatar {
-  width: 100px;
-  height: 100px; }
+  width: 110px;
+  height: 110px;
+  float: left; }
 
 .bio-p {
   margin-bottom: 0;
@@ -138,7 +117,6 @@
 
 .btn-thin, .btn-cloudorange, .btn-skyblue {
   padding: 0 30px;
-  float: left;
   border-radius: 1px;
   font: small-caps bold 13px/150% Ubuntu, Helvetica, sans-serif;
   line-height: 1px;
@@ -165,9 +143,7 @@
   line-height: 1px; }
 
 .btn-panel {
-  position: relative;
-  bottom: 100px;
-  left: 100px; }
+  float: right; }
 
 .playing, .sc-orange, .fab {
   background-color: #FF6C00; }
@@ -185,7 +161,8 @@
   font-size: 1.2em;
   text-shadow: 0px 0px 10px #000;
   color: #fff;
-  font-family: Ubuntu, Geneva, sans-serif; }
+  font-family: Ubuntu, Geneva, sans-serif;
+  margin-left: 8px; }
 
 .tracklist {
   margin-top: 200px; }
@@ -197,7 +174,11 @@
 
 .scloudRow {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 40px rgba(0, 0, 0, 0.19);
-  opacity: 0.9; }
+  opacity: 0.9;
+  height: 8em; }
+  .scloudRow p {
+    width: 100%;
+    margin-left: 100px; }
 
 .entry:hover {
   -webkit-transform: scale(1.1);
