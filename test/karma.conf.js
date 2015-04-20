@@ -31,6 +31,7 @@ module.exports = function(config) {
       'bower_components/angular-utils-pagination/dirPagination.js',
       'bower_components/sdk/index.js',
       'bower_components/angular-modal-service/dst/angular-modal-service.js',
+      'bower_components/humane-js/humane.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

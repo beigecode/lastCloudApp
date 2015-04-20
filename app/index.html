@@ -76,14 +76,15 @@
 
 
       <div class="row">
-        <div class="col-md-6 tracklist">
+        <div class="col-md-1"></div>
+        <div class="col-md-5 tracklist">
           <ul>
             <li dir-paginate="track in user.tracks | filter:q | itemsPerPage: 8" current-page="currentPage" class="entry scloudRow">
               <span scloud-link play='play(track)' ng-model="track"></span>
             </li>
           </ul>
         </div>
-        <div class="col-md-6 tracklist">
+        <div class="col-md-5 tracklist">
           <ul>
             <li dir-paginate="trak in lfmUser.traks | filter:q | itemsPerPage: 8" current-page="currentPage" class="entry scloudRow">
               <div class="btn-panel" btn-stack></div>
@@ -91,6 +92,7 @@
             </li>
           </ul>
         </div>
+        <div class="col-md-1"></div>
       </div>
 
       <div class="footer navbar-fixed-bottom">
@@ -125,6 +127,7 @@
      <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
      <script src="bower_components/sdk/index.js"></script>
      <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+     <script src="bower_components/humane-js/humane.min.js"></script>
      <!-- endbower -->
      <!-- endbuild -->
 

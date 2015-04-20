@@ -23,6 +23,7 @@ var app = angular
 })
 .controller('PlayerController', ['$scope','$http','scloudService','lfmService','ModalService', function($scope, $http, scloudService, lfmService, ModalService) {
 
+  humane.error = humane.spawn({ addnCls: 'humane-flatty-error', timeout: 3000 });
   $scope.playing = false;
   $scope.audio = document.createElement('audio');
   $scope.user = {};
@@ -40,7 +41,10 @@ var app = angular
     .success(function(data, status) {
       $scope.user = data;
       resolvedUrl = $scope.user.uri;
-    })
+    }).
+      error(function(status) {
+        humane.error('No such SoundCloud username!');
+      })
     .then(function(data) {
       scloudService.getUserTracks(username)
       .success(function(data) {
@@ -56,8 +60,13 @@ var app = angular
 
     lfmService.getTopTracks(lfmUsername)
     .success(function(data) {
-      $scope.lfmUser.traks = data.toptracks.track;
-      console.log($scope.lfmUser.traks);
+      if (data.toptracks) {
+        $scope.lfmUser.traks = data.toptracks.track;
+        console.log($scope.lfmUser.traks);
+      } else {
+        humane.error('No such Last.fm username!');
+      }
+
     })
 
   };
@@ -85,7 +94,7 @@ var app = angular
     $scope.showSimilar = function(trak) {
     ModalService.showModal({
       templateUrl: 'views/similarArtists.html',
-      controller: "PlayerController"
+      controller: 'PlayerController'
     }).then(function(modal) {
       lfmService.getArtistInfo(trak.artist.name)
       .success(function(data) {;
