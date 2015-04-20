@@ -51,6 +51,11 @@ var app = angular
         $scope.user.tracks = data;
         $('.gg-container').css('background-image', 'url(' + $scope.user.avatar_url + ')');
         console.log($scope.user)
+
+        if ($scope.user.tracks.length === 0) {
+          humane.error('This user does not have any tracks!');
+        }
+
       })
     })
 
@@ -60,9 +65,11 @@ var app = angular
 
     lfmService.getTopTracks(lfmUsername)
     .success(function(data) {
-      if (data.toptracks) {
+      if (data.toptracks && data.toptracks.length > 0) {
         $scope.lfmUser.traks = data.toptracks.track;
         console.log($scope.lfmUser.traks);
+      } else if (data.toptracks.length === 0) {
+        humane.error('This user has no track history!');
       } else {
         humane.error('No such Last.fm username!');
       }
