@@ -68,8 +68,6 @@ var app = angular
       if (data.toptracks && data.toptracks.length > 0) {
         $scope.lfmUser.traks = data.toptracks.track;
         console.log($scope.lfmUser.traks);
-      } else if (data.toptracks.length === 0) {
-        humane.error('This user has no track history!');
       } else {
         humane.error('No such Last.fm username!');
       }
