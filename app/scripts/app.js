@@ -65,7 +65,7 @@ var app = angular
 
     lfmService.getTopTracks(lfmUsername)
     .success(function(data) {
-      if (data.toptracks && data.toptracks.length > 0) {
+      if (data.toptracks) {
         $scope.lfmUser.traks = data.toptracks.track;
         console.log($scope.lfmUser.traks);
       } else {
