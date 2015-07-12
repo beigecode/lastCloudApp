@@ -1,1 +1,2 @@
-SoundCloud/LastFM blend using the aforementioned APIs
+SoundCloud/LastFM Player experiment
+http://lastcloudapp.herokuapp.com/
